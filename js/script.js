@@ -1,30 +1,39 @@
-const prizeMoney = [
-  1,
-  5,
-  10,
-  25,
-  50,
-  75,
-  100,
-  200,
-  300,
-  400,
-  500,
-  750,
-  1000,
-  5000,
-  10000,
-  25000,
-  50000,
-  75000,
-  100000,
-  200000,
-  300000,
-  400000,
-  500000,
-  750000,
-  1000000
-];
+// var prizeMoney = [
+//   1,
+//   5,
+//   10,
+//   25,
+//   50,
+//   75,
+//   100,
+//   200,
+//   300,
+//   400,
+//   500,
+//   750,
+//   1000,
+//   5000,
+//   10000,
+//   25000,
+//   50000,
+//   75000,
+//   100000,
+//   200000,
+//   300000,
+//   400000,
+//   500000,
+//   750000,
+//   1000000
+// ];
+var prizeMoney = [0.05, 0.2, 0.5, 0.75, 1.0, 1.5, 2.0, 2.5, 3.0, 5.0, 7.5, 10.0, 12.5, 15.0, 20.0, 25.0, 50.0, 75.0, 100.0, 125.0, 150.0, 200.0];
+//amounts for jumbotrons
+var largest = prizeMoney[21];
+var secondLargest = prizeMoney[20];
+var smallest = prizeMoney[0];
+var secondSmallest = prizeMoney[1];
+var thirdSmallest = prizeMoney[2];
+var forthSmallest = prizeMoney[3];
+var yayValue = prizeMoney[3];
 // Initialize an empty array to hold the selected values.
 let selectedValues = [];
 // Initialize the number of boxes
@@ -125,16 +134,17 @@ function clickBox() {
       "This box is already opened! Please choose another box!";
   } else {
     // Convert string to number
-    numberValue = parseInt(this.id);
+    numberString = this.id;
+    numberValue = parseInt(numberString);
     // Add selected value to selected value array
     selectedValues.push(numberValue);
     // Add commas for thousands seperator
-    this.innerText = "$" + numberValue.toLocaleString();
+    this.innerText = "$" + numberString.toLocaleString();
     this.style.fontSize = "25px";
     this.classList.add("opened-box", "puff-in-center");
     this.classList.remove("game-box");
     messageDisplay.innerText =
-      "The box you opened has got $" + numberValue.toLocaleString() + " in it.";
+      "The box you opened has got $" + numberString.toLocaleString() + " in it.";
     // Increment the Turn Number every time a box is clicked.
     turnNumber++;
     turnNumberDisplay.innerText = turnNumber;
@@ -149,12 +159,24 @@ function clickBox() {
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "./img/open-750.gif";
     } else if (numberValue === 1) {
-      jumbotronDisplayOpen750();
+      jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "./img/yay.gif";
-    } else if (numberValue === 500000) {
+    } else if (numberString === smallest) {
+      jumbotronDisplayOpenForValue();
+      jumbotronDisplayImage.src = "./img/yay.gif";
+    } else if (numberValue === secondSmallest) {
+      jumbotronDisplayOpenForValue();
+      jumbotronDisplayImage.src = "./img/yay.gif";
+    } else if (numberValue === thirdSmallest) {
+      jumbotronDisplayOpenForValue();
+      jumbotronDisplayImage.src = "./img/yay.gif";
+    } else if (numberValue < yayValue ) {
+      jumbotronDisplayOpenForValue();
+      jumbotronDisplayImage.src = "./img/yay.gif";
+    } else if (numberValue === secondLargest) {
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "./img/500000.gif";
-    } else if (numberValue === 1000000) {
+    } else if (numberValue === largest) {
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "./img/facepalm.gif";
     }
@@ -175,7 +197,7 @@ let playerDealDecision;
 // Add Event Listener to Deal or No Deal Buttons to listen for click
 // Set/Toggle the playerDealDecision boolean based on player deal decision
 dealButton.onclick = function() {
-  if (bankerHasAnOffer === true && turnNumber < 24) {
+  if (bankerHasAnOffer === true && turnNumber < 21) {
     playerDealDecision = true;
     const lastBoxToBeOpened = document.getElementsByClassName("initial-box");
     const boxId = lastBoxToBeOpened[0].id;
@@ -199,7 +221,7 @@ dealButton.onclick = function() {
 };
 
 noDealButton.onclick = function() {
-  if (bankerHasAnOffer === true && turnNumber < 24) {
+  if (bankerHasAnOffer === true && turnNumber < 21) {
     playerDealDecision = false;
     messageDisplay.innerText = "You chose no deal! Please continue choosing!";
   } else {
@@ -233,17 +255,17 @@ const checkGame = function() {
   if (turnNumber === 0) {
     chooseInitialBox();
   } else if (
-    turnNumber === 7 ||
-    turnNumber === 13 ||
-    turnNumber === 18 ||
-    turnNumber === 22
+    turnNumber === 6 ||
+    turnNumber === 10 ||
+    turnNumber === 15 ||
+    turnNumber === 19
   ) {
     // Set the offerValue to be the average remaining value.
-    offerValue = (totalPrizeMoney - totalSelectedValues) / (25 - turnNumber);
+    offerValue = (totalPrizeMoney - totalSelectedValues) / (22 - turnNumber);
     showJumbotronWithBankerCall();
-  } else if (turnNumber === 24) {
+  } else if (turnNumber === prizeMoney.length-1) {
     // Set the offerValue to be the average remaining value.
-    offerValue = (totalPrizeMoney - totalSelectedValues) / (25 - turnNumber);
+    offerValue = (totalPrizeMoney - totalSelectedValues) / (22 - turnNumber);
     modalDisplay.innerText =
       "The banker called! do you want to switch your boxes?";
     dealButton.innerText = "Switch";
