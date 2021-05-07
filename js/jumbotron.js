@@ -80,7 +80,7 @@ const acceptedBankerAmountEndGameAndAskToPlayAgain = function(
     "You accepted the banker amount of $" +
     parseInt(bankeramount).toLocaleString() +
     ". Your original box actually contained $" +
-    parseInt(boxId).toLocaleString();
+    boxId.toLocaleString();
   jumbotronDisplay.classList.remove("heartbeat");
   jumbotronDisplayContent.classList.add("bounce-in-top");
   jumbotronDisplayContent.style.fontSize = "30px";
@@ -100,7 +100,7 @@ const showWinningAmountAndAskToPlayAgain = function(boxId) {
   jumbotronDisplayTitle.innerText = "The amount you won is";
   jumbotronDisplayTitle.style.fontSize = "40px";
   jumbotronDisplayImage.src="./img/makeitrain.gif"
-  jumbotronDisplayContent.innerText = parseInt(boxId).toLocaleString();
+  jumbotronDisplayContent.innerText = boxId; //parseInt(boxId).toLocaleString();
   jumbotronDisplayContent.classList.add("tracking-in-contract-bck-top");
   jumbotronDisplay.classList.remove("heartbeat");
   jumbotronDisplayContent.style.fontSize = "90px";
