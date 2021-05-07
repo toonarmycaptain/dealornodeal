@@ -170,28 +170,28 @@ function clickBox() {
     // Showing jumbotrons for various amounts chosen
     if (numberValue === 750) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/open-750.gif";
+      jumbotronDisplayImage.src = "../static/open-750.gif";
     } else if (numberValue === 1) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/yay.gif";
+      jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberString === smallest) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/yay.gif";
+      jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberValue === secondSmallest) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/yay.gif";
+      jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberValue === thirdSmallest) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/yay.gif";
+      jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberValue < yayValue ) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/yay.gif";
+      jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberValue === secondLargest) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/500000.gif";
+      jumbotronDisplayImage.src = "../static/500000.gif";
     } else if (numberValue === largest) {
       jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "./img/facepalm.gif";
+      jumbotronDisplayImage.src = "../static/facepalm.gif";
     }
     checkGame();
   }

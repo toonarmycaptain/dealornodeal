@@ -9,7 +9,7 @@ const showJumbotronWithBankerCall = function() {
   jumbotronDisplayTitle.innerText = "RING RING RING";
   jumbotronDisplayContent.innerText =
     "You have an incoming call from the banker";
-  jumbotronDisplayImage.src = "./img/incomingcall.gif";
+  jumbotronDisplayImage.src = "../static/incomingcall.gif";
   jumbotronDisplayButton.innerText = "Answer the call";
   jumbotronDisplayButton.onclick = function() {
     hideJumbotron();
@@ -57,7 +57,7 @@ const jumbotronDisplayOpen1000000 = function() {
 const showJumbotronWithWinningPage = function(boxNumber, boxId) {
   jumbotronDisplayTitle.innerText = "OPEN YOUR BOXXXXXXX";
   jumbotronDisplayContent.innerText = "OPEN IT!!!!!";
-  jumbotronDisplayImage.src = "./img/openbox.gif";
+  jumbotronDisplayImage.src = "../static/openbox.gif";
   jumbotronDisplayButton.innerText = "Open Box Number " + boxNumber;
   jumbotronDisplayButton.onclick = function() {
     showWinningAmountAndAskToPlayAgain(boxId);
@@ -85,7 +85,7 @@ const acceptedBankerAmountEndGameAndAskToPlayAgain = function(
   jumbotronDisplayContent.classList.add("bounce-in-top");
   jumbotronDisplayContent.style.fontSize = "30px";
   jumbotronDisplayContent.style.fontWeight = "bold";
-  jumbotronDisplayImage.src = "./img/makeitrain.gif";
+  jumbotronDisplayImage.src = "../static/makeitrain.gif";
   jumbotronDisplayImage.parentNode;
   jumbotronDisplayContent.style.color = "#ff0000";
   jumbotronDisplayButton.innerText = "Click here to play again!";
@@ -99,7 +99,7 @@ const acceptedBankerAmountEndGameAndAskToPlayAgain = function(
 const showWinningAmountAndAskToPlayAgain = function(boxId) {
   jumbotronDisplayTitle.innerText = "The amount you won is";
   jumbotronDisplayTitle.style.fontSize = "40px";
-  jumbotronDisplayImage.src="./img/makeitrain.gif"
+  jumbotronDisplayImage.src="../static/makeitrain.gif"
   jumbotronDisplayContent.innerText = boxId; //parseInt(boxId).toLocaleString();
   jumbotronDisplayContent.classList.add("tracking-in-contract-bck-top");
   jumbotronDisplay.classList.remove("heartbeat");
