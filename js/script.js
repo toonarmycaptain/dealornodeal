@@ -124,7 +124,7 @@ function clickBox() {
     messageDisplay.innerText =
       "You have chosen box number " +
       this.textContent +
-      " as your initial box. Choose 6 boxes to open.";
+      " as your initial box. Choose 5 boxes to open.";
     chooseInitialBox();
   } else if (
     this.classList.contains("opened-box") ||
@@ -257,8 +257,10 @@ const checkGame = function() {
   } else if (
     turnNumber === 6 ||
     turnNumber === 10 ||
-    turnNumber === 15 ||
-    turnNumber === 19
+    turnNumber === 14 ||
+    turnNumber === 17 ||
+    turnNumber === 19 ||
+    turnNumber === 20
   ) {
     // Set the offerValue to be the average remaining value.
     offerValue = (totalPrizeMoney - totalSelectedValues) / (22 - turnNumber);
