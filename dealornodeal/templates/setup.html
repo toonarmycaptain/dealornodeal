@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+    {% block header %}
+      {% block title %}Setup{% endblock %}
+
+    {% endblock %}
+
+
+{% block body %}
+    <p style="text-align:center">Enter total prize:</p>
+    <form action="{{ url_for('game.setup') }}" method=post>
+        {% from 'form_helper.html' import render_field %}
+        {{ form.hidden_tag() }}
+        {{ render_field(form.prize) }}
+        {{ render_field(form.submit) }}
+{#        <label for="prize">Amount:</label><input type="number" id="prize" name="prize">#}
+{#        <input id="submit" name="submit" type="submit" formmethod="post" value="submit">#}
+    </form>
+
+{% endblock %}

@@ -25,7 +25,20 @@
 //   750000,
 //   1000000
 // ];
-var prizeMoney = [0.05, 0.2, 0.5, 0.75, 1.0, 1.5, 2.0, 2.5, 3.0, 5.0, 7.5, 10.0, 12.5, 15.0, 20.0, 25.0, 50.0, 75.0, 100.0, 125.0, 150.0, 200.0];
+// var prizeMoney = [0.05, 0.2, 0.5, 0.75, 1.0, 1.5, 2.0, 2.5, 3.0, 5.0, 7.5, 10.0, 12.5, 15.0, 20.0, 25.0, 50.0, 75.0, 100.0, 125.0, 150.0, 200.0];
+
+// prizeMoney = getBoxAmounts(prizes)
+function getBoxAmounts() {
+  if (prizes) {
+    console.log(prizes);
+    var prizeMoney = prizes;
+  }
+  else {
+    var prizeMoney = [0.05, 0.2, 0.5, 0.75, 1.0, 1.5, 2.0, 2.5, 3.0, 5.0, 7.5, 10.0, 12.5, 15.0, 20.0, 25.0, 50.0, 75.0, 100.0, 125.0, 150.0, 200.0];
+  }
+  return prizeMoney;
+}
+prizeMoney = getBoxAmounts()
 //amounts for jumbotrons
 var largest = prizeMoney[21];
 var secondLargest = prizeMoney[20];
