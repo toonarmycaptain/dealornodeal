@@ -9,7 +9,7 @@
 
 {% block body %}
     <p style="text-align:center">Enter total prize:</p>
-    <form action="{{ url_for('game.setup') }}" method=post>
+    <form style="text-align:center" action="{{ url_for('game.setup') }}" method=post>
         {% from 'form_helper.html' import render_field %}
         {{ form.hidden_tag() }}
         {{ render_field(form.prize) }}
