@@ -40,7 +40,6 @@ def play():
         prizes = [round(proportion * prize_pool, 2) for proportion in my_proportions]
     except KeyError:
         prizes = None
-    print(prizes)
     return render_template('index.html', prizes=json.dumps(prizes))
 
 
