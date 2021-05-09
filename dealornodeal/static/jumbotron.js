@@ -55,7 +55,7 @@ const jumbotronDisplayOpen1000000 = function() {
 
 // Function for showing Jumbotron with Winning Page
 const showJumbotronWithWinningPage = function(boxNumber, boxId) {
-  jumbotronDisplayTitle.innerText = "OPEN YOUR BOX!;
+  jumbotronDisplayTitle.innerText = "OPEN YOUR BOX!";
   jumbotronDisplayContent.innerText = "OPEN IT!!!!!";
   jumbotronDisplayImage.src = "../static/openbox.gif";
   jumbotronDisplayButton.innerText = "Open Box Number " + boxNumber;
