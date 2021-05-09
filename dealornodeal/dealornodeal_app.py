@@ -37,7 +37,7 @@ def play():
     """Home page."""
     try:
         prize_pool = session['prize_pool']
-        prizes = [proportion * prize_pool for proportion in my_proportions]
+        prizes = [round(proportion * prize_pool, 2) for proportion in my_proportions]
     except KeyError:
         prizes = None
     print(prizes)
