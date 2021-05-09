@@ -39,11 +39,14 @@ function getBoxAmounts() {
   return prizeMoney;
 }
 prizeMoney = getBoxAmounts()
+console.log(`prizeMoney = ${prizeMoney}`);
 //amounts for jumbotrons
 var largest = prizeMoney[21];
+console.log(`largest = ${largest }`);
 var secondLargest = prizeMoney[20];
 console.log(`secondLargest = ${secondLargest}`);
 var yayValue = prizeMoney[3];
+console.log(`yayValue = ${yayValue}`);
 // Initialize an empty array to hold the selected values.
 let selectedValues = [];
 // Initialize the number of boxes
@@ -166,18 +169,22 @@ function clickBox() {
     }
     // Showing jumbotrons for various amounts chosen
     if (numberValue === 750) {
+      console.log(`numberValue === 750 >>> open-750.gif: case value = ${750} ${numberValue === 750}`);
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "../static/open-750.gif";
     } else if (numberValue === 1) {
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberValue < yayValue ) {
+      console.log(`numberValue < yayValue  >>> yay.gif: case value = ${numberValue} < ${yayValue} ${numberValue < yayValue}`);
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberValue === secondLargest) {
+      console.log(`numberValue === secondLargest >>> 500000.gif: case value = ${secondLargest} ${numberValue === secondLargest}`);
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "../static/500000.gif";
     } else if (numberValue === largest) {
+      console.log(`numberValue === largest >>> facepalm.gif: case value = ${largest} ${numberValue === largest}`);
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "../static/facepalm.gif";
     }
@@ -265,6 +272,7 @@ const checkGame = function() {
   ) {
     // Set the offerValue to be the average remaining value.
     offerValue = (totalPrizeMoney - totalSelectedValues) / (22 - turnNumber);
+    console.log(`offerValue = ${offerValue}`);
     showJumbotronWithBankerCall();
   } else if (turnNumber === prizeMoney.length-1) {
     // Set the offerValue to be the average remaining value.
