@@ -42,10 +42,7 @@ prizeMoney = getBoxAmounts()
 //amounts for jumbotrons
 var largest = prizeMoney[21];
 var secondLargest = prizeMoney[20];
-var smallest = prizeMoney[0];
-var secondSmallest = prizeMoney[1];
-var thirdSmallest = prizeMoney[2];
-var forthSmallest = prizeMoney[3];
+console.log(`secondLargest = ${secondLargest}`);
 var yayValue = prizeMoney[3];
 // Initialize an empty array to hold the selected values.
 let selectedValues = [];
@@ -172,15 +169,6 @@ function clickBox() {
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "../static/open-750.gif";
     } else if (numberValue === 1) {
-      jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "../static/yay.gif";
-    } else if (numberString === smallest) {
-      jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "../static/yay.gif";
-    } else if (numberValue === secondSmallest) {
-      jumbotronDisplayOpenForValue();
-      jumbotronDisplayImage.src = "../static/yay.gif";
-    } else if (numberValue === thirdSmallest) {
       jumbotronDisplayOpenForValue();
       jumbotronDisplayImage.src = "../static/yay.gif";
     } else if (numberValue < yayValue ) {
