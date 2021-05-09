@@ -148,7 +148,7 @@ function clickBox() {
   } else {
     // Convert string to number
     numberString = this.id;
-    numberValue = parseInt(numberString);
+    numberValue = parseFloat(numberString);
     // Add selected value to selected value array
     selectedValues.push(numberValue);
     // Add commas for thousands seperator
