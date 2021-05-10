@@ -25,16 +25,16 @@
 //   750000,
 //   1000000
 // ];
-// var prizeMoney = [0.05, 0.2, 0.5, 0.75, 1.0, 1.5, 2.0, 2.5, 3.0, 5.0, 7.5, 10.0, 12.5, 15.0, 20.0, 25.0, 50.0, 75.0, 100.0, 125.0, 150.0, 200.0];
+// var prizeMoney = [0.05, 15.0, 0.5, 20.0, 1.0, 25.0, 1.5, 40.0, 2.0, 50.0, 2.5, 60.0, 3.0, 75.0, 5.0, 100.0, 7.5, 125.0, 10.0, 150.0, 12.5, 200.0];
 
-// prizeMoney = getBoxAmounts(prizes)
+prizeMoney = getBoxAmounts(prizes)
 function getBoxAmounts() {
   if (prizes) {
     console.log(prizes);
     var prizeMoney = prizes;
   }
   else {
-    var prizeMoney = [0.05, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 5.0, 7.5, 10.0, 12.5, 15.0, 20.0, 25.0, 40.0, 50.0, 60.0, 75.0, 100.0, 125.0, 150.0, 200.0];
+    var prizeMoney = [0.05, 15.0, 0.5, 20.0, 1.0, 25.0, 1.5, 40.0, 2.0, 50.0, 2.5, 60.0, 3.0, 75.0, 5.0, 100.0, 7.5, 125.0, 10.0, 150.0, 12.5, 200.0];
   }
   return prizeMoney;
 }
@@ -43,9 +43,9 @@ console.log(`prizeMoney = ${prizeMoney}`);
 //amounts for jumbotrons
 var largest = prizeMoney[21];
 console.log(`largest = ${largest }`);
-var secondLargest = prizeMoney[20];
+var secondLargest = prizeMoney[19];
 console.log(`secondLargest = ${secondLargest}`);
-var yayValue = prizeMoney[3];
+var yayValue = prizeMoney[6];
 console.log(`yayValue = ${yayValue}`);
 // Initialize an empty array to hold the selected values.
 let selectedValues = [];

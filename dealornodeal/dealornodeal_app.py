@@ -9,7 +9,7 @@ from flask import (Blueprint,
                    )
 from flask_wtf.csrf import CSRFError
 
-from dealornodeal.amounts import my_proportions
+from dealornodeal.amounts import generate_prizes
 from dealornodeal.setup_form import PrizePool
 bp = Blueprint("game", __name__)
 
@@ -37,7 +37,7 @@ def play():
     """Home page."""
     try:
         prize_pool = session['prize_pool']
-        prizes = [round(proportion * prize_pool, 2) for proportion in my_proportions]
+        prizes = generate_prizes(prize_pool)
     except KeyError:
         prizes = None
     return render_template('index.html', prizes=json.dumps(prizes))
